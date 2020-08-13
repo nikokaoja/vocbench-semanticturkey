@@ -1,0 +1,29 @@
+version: "3.3"
+
+networks:
+  web:
+    external: true
+  backend:
+    external: false
+
+services:
+  semantic-turkey:
+    build: ./semanticturkey
+    container_name: semantic-turkey-test
+    environment:
+      - COLUMNS=236
+      - LINES=66
+      - TERM=xterm
+    ports:
+      - 1979:1979
+    networks:
+      - backend
+
+  vocbench:
+    build: ./vocbench
+    container_name: vocbench-test
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+      - web
