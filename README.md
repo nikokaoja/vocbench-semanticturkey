@@ -1,6 +1,6 @@
 # vocbenc-semanticturkey
 
-Docker setup for running VocBench3 and SemanticTurkey via two separate docker services
+Docker setup for running VocBench3 and SemanticTurkey via two separate docker containers.
 
 Once you clone this repository execute command, make two docker networks (web and backend):
 
