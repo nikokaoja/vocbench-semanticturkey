@@ -1,0 +1,20 @@
+## Setting up the middleware for redirect to https ##
+http:
+  middlewares:
+    redirect:
+      redirectScheme:
+        scheme: https
+    fuseki-stripprefix:
+      stripPrefix:
+        prefixes:
+          - "/ontologies/fuseki"
+    protege-stripprefix:
+      stripPrefix:
+        prefixes:
+          - "/ontologies/protege"
+    vocbench-replacepath:
+      # replacePath:
+      #   path: "/vocbench3"
+      replacePathRegex:
+        regex: "^/ontologies/edit/(.*)"
+        replacement: "/vocbench/$1"
